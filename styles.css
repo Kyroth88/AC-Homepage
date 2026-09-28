@@ -285,4 +285,114 @@ header {
     font-size: 0.85rem;
     margin-top: 0.5rem;
     color: var(--gold);
+    word-break: break-all;
+}
+
+/* ==========================================================================
+   ARMORY PAGE SPECIFIC STYLING
+   ========================================================================== */
+
+.armory-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 850px) {
+    .armory-grid { grid-template-columns: 1fr; }
+}
+
+.class-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.class-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.class-btn:hover, .class-btn.active {
+    border-color: var(--primary);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.class-btn i { font-size: 1.1rem; }
+
+.gear-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.gear-slot-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.gear-slot-card:hover {
+    border-color: var(--primary);
+}
+
+.gear-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    background: #1e293b;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+/* WoW Item Quality Colors */
+.q-poor { border-color: #9d9d9d; color: #9d9d9d; }
+.q-common { border-color: #ffffff; color: #ffffff; }
+.q-uncommon { border-color: #1eff00; color: #1eff00; }
+.q-rare { border-color: #0070dd; color: #0070dd; }
+.q-epic { border-color: #a335ee; color: #a335ee; }
+.q-legendary { border-color: #ff8000; color: #ff8000; }
+
+.gear-details { flex-grow: 1; }
+.gear-slot-name { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }
+.gear-item-name { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+.gear-stats { font-size: 0.8rem; color: var(--gold); }
+
+.item-search-bar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.item-search-bar:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
 }
